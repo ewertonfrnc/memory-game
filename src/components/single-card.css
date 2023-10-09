@@ -1,0 +1,47 @@
+.card {
+    perspective: 2000px;
+    cursor: pointer;
+    position: relative;
+    height: 250px;
+    transform: translateY(-9px);
+    transition: all 0.1s;
+}
+
+.card:active {
+    transform: translateY(0);
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+.card img:nth-child(2) {
+    object-fit: contain;
+}
+
+.card__side {
+    border-radius: 6px;
+    backface-visibility: hidden;
+    background-color: #f2f2f2;
+    transition: all ease 0.4s;
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__side--front {
+    transform: rotateY(180deg);
+}
+
+.flipped .card__side--front {
+    transform: rotateY(0deg);
+}
+
+.flipped .card__side--back {
+    transform: rotateY(180deg);
+}
